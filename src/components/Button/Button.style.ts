@@ -56,6 +56,10 @@ export const ButtonElement = styled.button<{
         background-color: var(--background-color-success);
         color: var(--text-color-inverse);
         border-color: var(--background-color-success);
+
+        &:hover {
+            background-color: var(--background-color-success-hover);
+        }
         `
     }
 
@@ -65,6 +69,11 @@ export const ButtonElement = styled.button<{
         background-color: var(--text-color-inverse);
         color: var(--background-color-success);
         border-color: var(--background-color-success);
+
+        &:hover {
+            background-color: var(--background-color-success);
+            color: var(--text-color-inverse);
+        }
         `
     }
 
