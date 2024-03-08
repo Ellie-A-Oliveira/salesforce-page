@@ -1,17 +1,38 @@
 import styled from "styled-components";
+import { ButtonVariants, Sizes } from "../../constants";
 
-export const ButtonElement = styled.button`
-    border-radius: 3px;
+export const ButtonElement = styled.button<{
+    variant?: ButtonVariants,
+    size?: Sizes,
+    format?: 'round'
+}>`
+    border-width: 1px;
+    border-style: solid;
+    border-color: unset;
+    border-radius: 5px;
+    
     padding: .75rem 2rem;
-    border: none;
+    
+    font-size: var(--text-size-small);
+    font-weight: bold;
 
-    /* Variants */
+    cursor: pointer;
+
+    transition: background-color .1s ease-in-out,
+                color .1s ease-in-out;
+
+    /* SECTION - Variants */
 
     ${(props) => 
         props.variant === 'primary' &&
         `
         background-color: var(--background-color-primary);
         color: var(--text-color-inverse);
+        border-color: var(--background-color-primary);
+        
+        &:hover {
+            background-color: var(--background-color-primary-hover);
+        }
         `
     }
 
@@ -20,7 +41,12 @@ export const ButtonElement = styled.button`
         `
         background-color: var(--text-color-inverse);
         color: var(--background-color-primary);
-        border: 1px solid var(--background-color-primary);
+        border-color: var(--background-color-primary);
+        
+        &:hover {
+            background-color: var(--background-color-primary);
+            color: var(--text-color-inverse);
+        }
         `
     }
 
@@ -29,6 +55,7 @@ export const ButtonElement = styled.button`
         `
         background-color: var(--background-color-success);
         color: var(--text-color-inverse);
+        border-color: var(--background-color-success);
         `
     }
 
@@ -37,13 +64,13 @@ export const ButtonElement = styled.button`
         `
         background-color: var(--text-color-inverse);
         color: var(--background-color-success);
-        border: 1px solid var(--background-color-success);
+        border-color: var(--background-color-success);
         `
     }
 
-    /* End Variants */
+    /* !SECTION - Variants */
 
-    /* Sizes */
+    /* SECTION - Sizes */
 
     ${(props) =>
         props.size === 'sm' &&
@@ -52,5 +79,17 @@ export const ButtonElement = styled.button`
         `
     }
 
-    /* Sizes End */
+    /* !SECTION - Sizes */
+
+    /* SECTION - Formats */
+
+    ${(props) =>
+        props.format === 'round' &&
+        `
+        border-radius: 50%;
+        padding: .75rem;
+        `
+    }
+
+    /* !SECTION - Formats */
 `;

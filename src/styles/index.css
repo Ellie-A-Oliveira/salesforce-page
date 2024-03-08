@@ -2,24 +2,14 @@
 @import url('./fonts.css');
 @import url('./colors.css');
 
-* {
-	font-family: 'Salesforce Sans';
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: 'ITC Avant Garde';
-}
-
 body {
 	--theme-background-color: var(--white);
 
 	--background-color-primary: var(--blue-400);
 	--background-color-success: var(--green-400);
+
+	--background-color-primary-hover: var(--blue-800);
+	--background-color-success-hover: var(--green-800);
 	
 	--text-color: var(--gray);
 	--text-color-emphasis: var(--blue-800);
@@ -31,4 +21,21 @@ body {
 	--text-size-h3: 1.5rem;
 	--text-size-h2: 2rem;
 	--text-size-h1: 2.5rem;
+
+	font-family: 'Salesforce Sans';
+	color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'ITC Avant Garde';
+	color: var(--text-color-emphasis);
+}
+
+a {
+	cursor: pointer;
 }
