@@ -14,10 +14,9 @@ export const Header = () => {
 			<nav>
 				<a onClick={handleNavigateToHome}>Home</a>
 			</nav>
-			<Button
-				variant={ButtonVariants.SUCCESS}
-				size={Sizes.SMALL}
-			>Teste grátis</Button>
+			<Button variant={ButtonVariants.SUCCESS} size={Sizes.SMALL}>
+				Teste grátis
+			</Button>
 		</header>
 	);
 };

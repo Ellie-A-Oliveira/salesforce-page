@@ -10,12 +10,12 @@ body {
 
 	--background-color-primary-hover: var(--blue-800);
 	--background-color-success-hover: var(--green-800);
-	
+
 	--text-color: var(--gray);
 	--text-color-emphasis: var(--blue-800);
 	--text-color-inverse: var(--white);
 
-	--text-size-smallest: .75rem;
+	--text-size-smallest: 0.75rem;
 	--text-size-small: 1rem;
 	--text-size-regular: 1.25rem;
 	--text-size-h3: 1.5rem;
