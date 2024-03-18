@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { ButtonVariants, Sizes } from '../../constants';
+import { colors } from '../../styles/colors.style';
 
 export const ButtonElement = styled.button<{
 	variant?: ButtonVariants;
@@ -27,50 +28,50 @@ export const ButtonElement = styled.button<{
 	${(props) =>
 		props.variant === 'primary' &&
 		`
-        background-color: var(--background-color-primary);
-        color: var(--text-color-inverse);
-        border-color: var(--background-color-primary);
+        background-color: ${colors.background.primary};
+        color: ${colors.text.inverse};
+        border-color: ${colors.background.primary};
         
         &:hover {
-            background-color: var(--background-color-primary-hover);
+            background-color: ${colors.background.primaryHover};
         }
         `}
 
 	${(props) =>
 		props.variant === 'primary-inverted' &&
 		`
-        background-color: var(--text-color-inverse);
-        color: var(--background-color-primary);
-        border-color: var(--background-color-primary);
+        background-color: ${colors.text.inverse};
+        color: ${colors.background.primary};
+        border-color: ${colors.background.primary};
         
         &:hover {
-            background-color: var(--background-color-primary);
-            color: var(--text-color-inverse);
+            background-color: ${colors.background.primary};
+            color: ${colors.text.inverse};
         }
         `}
 
     ${(props) =>
 		props.variant === 'success' &&
 		`
-        background-color: var(--background-color-success);
-        color: var(--text-color-inverse);
-        border-color: var(--background-color-success);
+        background-color: ${colors.background.success};
+        color: ${colors.text.inverse};
+        border-color: ${colors.background.success};
 
         &:hover {
-            background-color: var(--background-color-success-hover);
+            background-color: ${colors.background.successHover};
         }
         `}
 
     ${(props) =>
 		props.variant === 'success-inverted' &&
 		`
-        background-color: var(--text-color-inverse);
-        color: var(--background-color-success);
-        border-color: var(--background-color-success);
+        background-color: ${colors.text.inverse};
+        color: ${colors.background.success};
+        border-color: ${colors.background.success};
 
         &:hover {
-            background-color: var(--background-color-success);
-            color: var(--text-color-inverse);
+            background-color: ${colors.background.success};};
+            color: ${colors.text.inverse};
         }
         `}
 
@@ -93,5 +94,7 @@ export const ButtonElement = styled.button<{
 		`
         border-radius: 50%;
         padding: .75rem;
-        `} /* !SECTION - Formats */
+        `}
+    
+    /* !SECTION - Formats */
 `;
