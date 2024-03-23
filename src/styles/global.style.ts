@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     h1, h2, h3, h4, h5, h6 {
-        font-family: 'ITC Avant Garde';
+        font-family: 'ITC Avant Garde' sans-serif;
         color: ${colors.text.emphasis};
     }
 
