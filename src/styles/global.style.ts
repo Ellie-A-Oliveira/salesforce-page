@@ -20,4 +20,9 @@ export const GlobalStyle = createGlobalStyle`
     a {
         cursor: pointer;
     }
+
+    .flex {
+        display: flex;
+        justify-content: space-between;
+    }
 `
