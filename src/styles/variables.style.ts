@@ -6,5 +6,8 @@ export const variables = {
         h3: '1.5rem',
         h2: '2rem',
         h1: '2.5rem',
+    },
+    borderRadius: {
+        default: '20px',
     }
 }

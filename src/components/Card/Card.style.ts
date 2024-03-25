@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { variables } from "../../styles/variables.style";
 
 interface CardProps {
     borders?: boolean;
@@ -12,7 +13,7 @@ export const CardStyled = styled.article<CardProps>`
     flex-direction: column;
     gap: calc(var(--padding) / 1.5);
     max-width: 368px;
-    border-radius: 20px;
+    border-radius: ${variables.borderRadius.default};
     padding-bottom: var(--padding);
     overflow: hidden;
 

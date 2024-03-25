@@ -1,7 +1,5 @@
-import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { Button } from '../../components';
 import { ButtonVariants } from '../../constants';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Card from '../../components/Card/Card';
 import * as img1 from '../../assets/img/marquee-salesforce-starter-980.webp';
 import * as img2 from '../../assets/img/Find-an-AI-solution.webp';
@@ -14,17 +12,22 @@ import * as img7 from '../../assets/img/php-products-all-products.webp';
 export const Home = () => {
 	return (
 		<>
-			<h1>Entregue sucesso agora com o Salesforce Customer 360.</h1>
-			<p>
-				O Customer 360 é a nossa suíte de produtos e serviços que ajuda 98% dos clientes a alcançar ou superar
-				suas metas de ROI.
-			</p>
-			<Button variant={ButtonVariants.PRIMARY}>Faça o teste grátis</Button>
-			<Button variant={ButtonVariants.PRIMARY_INVERTED}>Saiba Mais</Button>
-			<Button variant={ButtonVariants.PRIMARY} format="round">
-				<FontAwesomeIcon icon={faPhone} />
-			</Button>
-			<div className='flex'>
+			<article className='flex main-padding justify-between landing'>
+				<header className='landing-text'>
+					<h1>Experimente o Salesforce Starter Suite gratuitamente.</h1>
+					<p>
+					Reúna marketing, vendas e atendimento em um único aplicativo. Experimente o Salesforce Starter Suite hoje mesmo. Não há nada para instalar. Não é necessário cartão de crédito.
+					</p>
+					<div className="flex">
+						<Button variant={ButtonVariants.PRIMARY}>Inicie o teste gratuito</Button>
+						<Button variant={ButtonVariants.PRIMARY_INVERTED}>Assista à demo</Button>
+					</div>
+				</header>
+				<section>
+					<img src={img1.default} alt="Foto do Salesforce Starter" />
+				</section>
+			</article>
+			<div className='flex justify-between main-padding'>
 				<Card
 					imgsrc={img1.default}
 					imgheight='168px'
@@ -53,7 +56,8 @@ export const Home = () => {
 					borders={true}
 				/>
 			</div>
-			<div className="flex">
+			<h2>O que há de novo na Salesforce?</h2>
+			<div className="flex justify-between main-padding">
 				<Card
 					imgsrc={img4.default}
 					imgheight='368px'
