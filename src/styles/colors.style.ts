@@ -9,6 +9,7 @@ const palette = {
         dark: "#1a4a2a",
     },
     gray: {
+        light: "#818181",
         regular: "#323232",
     },
     white: {
@@ -24,6 +25,7 @@ export const colors = {
         regular: palette.gray.regular,
         emphasis: palette.blue.dark,
         inverse: palette.white.regular,
+        light: palette.gray.light,
     },
     background: {
         primary: palette.blue.regular,

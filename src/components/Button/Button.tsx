@@ -7,11 +7,12 @@ interface ButtonProps {
 	variant: ButtonVariants;
 	size?: Sizes;
 	format?: 'round';
+	className?: string;
 }
 
-export const Button = ({ children, variant, size, format }: ButtonProps) => {
+export const Button = ({ children, variant, size, format, className }: ButtonProps) => {
 	return (
-		<ButtonElement variant={variant} size={size} format={format}>
+		<ButtonElement className={className} variant={variant} size={size} format={format}>
 			{children}
 		</ButtonElement>
 	);
