@@ -12,6 +12,10 @@ import * as img8 from '../../assets/img/sumup-customers-home.webp';
 import * as img9 from '../../assets/img/gympass-customers-home.webp';
 import * as img10 from '../../assets/img/vipal-customers-home.webp';
 import * as img11 from '../../assets/img/tigre-customers-home.webp';
+import CircleButton from '../../components/Circle-Button/Circle-Button';
+import { faCoins } from '@fortawesome/free-solid-svg-icons';
+import { faShopify } from '@fortawesome/free-brands-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 export const Home = () => {
 	return (
@@ -139,6 +143,21 @@ export const Home = () => {
 						centered={true}
 						borders={true}
 					/>
+				</section>
+			</article>
+			<article className='main-padding text-center my-4 '>
+				<header>
+					<h2>Encontre inovações para qualquer setor de indústria.</h2>
+					<p>Seja qual for a sua indústria, oferecemos soluções para modernizar o seu negócio, economizar tempo e reduzir custos.</p>
+				</header>
+				<section className='my-4'>
+					<Button variant={ButtonVariants.PRIMARY_INVERTED}>Veja todas as indústrias</Button>
+					<div className='flex gap-4 justify-between my-4'>
+						<CircleButton iconName={faCoins}>Serviços Financeiros</CircleButton>
+						<CircleButton iconName={faShopify}>Varejo</CircleButton>
+						<CircleButton iconName={faHeart}>Saúde e Ciências da Vida</CircleButton>
+						<CircleButton iconName={faShopify}>Manufatura</CircleButton>
+					</div>
 				</section>
 			</article>
 		</>
