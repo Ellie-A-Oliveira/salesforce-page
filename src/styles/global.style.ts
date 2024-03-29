@@ -60,6 +60,10 @@ export const GlobalStyle = createGlobalStyle`
         justify-content: center;
     }
 
+    .align-center {
+        align-items: center;
+    }
+
     .main-padding {
         --padding: 9.5rem;
         padding-left: var(--padding);

@@ -3,7 +3,6 @@ import * as logo from '../../assets/img/salesforce-with-type-logo.svg';
 import { faFacebook, faInstagram, faLinkedin, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { FooterStyled } from './Footer.style';
 import { faAngleDown, faGlobe } from '@fortawesome/free-solid-svg-icons';
-import { Button } from '..';
 import FloatingMenu from '../Floating-Menu/Floating-Menu';
 
 interface FooterProps {
