@@ -33,10 +33,11 @@ export const CardStyled = styled.article<CardProps>`
     }
 
     .content {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-rows: max-content 1fr min-content;
         gap: calc(var(--padding) / 2);
         order: 2;
+        height: 100%;
     }
 
     .title {
@@ -95,6 +96,9 @@ export const CardStyled = styled.article<CardProps>`
             
             .content {
                 order: 1;
+                display: flex;
+                flex-direction: column;
+                height: inherit;
 
                 .title {
                     padding-left: 0;

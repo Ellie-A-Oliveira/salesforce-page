@@ -4,7 +4,7 @@ export const variables = {
         small: '1rem',
         regular: '1.25rem',
         socialLinks: '1.5rem',
-        h3: '1.5rem',
+        h3: '1.4rem',
         h2: '2rem',
         h1: '2.5rem',
     },
