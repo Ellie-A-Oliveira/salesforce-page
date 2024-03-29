@@ -38,7 +38,7 @@ export const Home = () => {
 				</section>
 			</article>
 			<article>
-				<header className="main-padding text-center my-4">
+				<header className="main-padding text-center my-5">
 					<h2>O que há de novo na Salesforce?</h2>
 				</header>
 				<section className='flex justify-between main-padding gap-3'>
@@ -66,7 +66,7 @@ export const Home = () => {
 				</section>
 			</article>
 			<article>
-				<header className="main-padding text-center my-4">
+				<header className="main-padding text-center my-5">
 					<h2>Saiba como o Salesforce ajuda você a trabalhar de maneira mais inteligente e a crescer com mais rapidez.</h2>
 				</header>
 				<section className="main-padding flex justify-between gap-3">
@@ -101,7 +101,7 @@ export const Home = () => {
 				</section>
 			</article>
 			<article>
-				<header className="main-padding text-center my-4">
+				<header className="main-padding text-center my-5">
 					<h2>Veja como os clientes da Salesforce se tornam empresas clientes.</h2>
 				</header>
 				<section className="main-padding flex justify-between gap-3">
@@ -147,7 +147,7 @@ export const Home = () => {
 					/>
 				</section>
 			</article>
-			<article className='main-padding text-center my-4'>
+			<article className='main-padding text-center my-5'>
 				<header>
 					<h2>Encontre inovações para qualquer setor de indústria.</h2>
 					<p>Seja qual for a sua indústria, oferecemos soluções para modernizar o seu negócio, economizar tempo e reduzir custos.</p>
@@ -164,7 +164,7 @@ export const Home = () => {
 					</div>
 				</section>
 			</article>
-			<article className='main-padding my-4'>
+			<article className='main-padding my-5'>
 				<section>
 					<Card
 						imgProps={{ imgsrc: img12.default, aspectRatio: '3/2', objectfit: 'contain' }}
