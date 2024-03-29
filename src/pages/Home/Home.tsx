@@ -79,22 +79,22 @@ export const Home = () => {
 					/>
 					<Card
 						imgProps={{ imgsrc: img5.default }}
-						title='Pequenas empresas'
-						description='Venda de forma mais inteligente e forneça suporte mais rápido em um único aplicativo.'
+						title='Vendas'
+						description='Feche mais negócios e acelere o crescimento com o CRM nº1.'
 						linkTitle='Assistir a demo'
 						link='https://www.google.com'
 					/>
 					<Card
 						imgProps={{ imgsrc: img6.default }}
-						title='Pequenas empresas'
-						description='Venda de forma mais inteligente e forneça suporte mais rápido em um único aplicativo.'
+						title='Atendimento'
+						description='Gaste menos com serviços escaláveis que os clientes adoram.'
 						linkTitle='Assistir a demo'
 						link='https://www.google.com'
 					/>
 					<Card
 						imgProps={{ imgsrc: img7.default }}
-						title='Pequenas empresas'
-						description='Venda de forma mais inteligente e forneça suporte mais rápido em um único aplicativo.'
+						title='Veja todos os produtos'
+						description='Descubra como nossas ofertas do Customer 360 proporcionam sucesso imediato.'
 						linkTitle='Assistir a demo'
 						link='https://www.google.com'
 					/>
