@@ -22,6 +22,7 @@ export const ButtonElement = styled.button<{
 
 	transition:
 		background-color 0.1s ease-in-out,
+		border-color 0.1s ease-in-out,
 		color 0.1s ease-in-out;
 
 	/* SECTION - Variants */
@@ -35,6 +36,7 @@ export const ButtonElement = styled.button<{
         
         &:hover {
             background-color: ${colors.background.primaryHover};
+            border-color: ${colors.background.primaryHover};
         }
         `}
 
@@ -60,6 +62,7 @@ export const ButtonElement = styled.button<{
 
         &:hover {
             background-color: ${colors.background.successHover};
+            border-color: ${colors.background.successHover};
         }
         `}
 
