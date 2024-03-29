@@ -42,8 +42,20 @@ export const GlobalStyle = createGlobalStyle`
         display: flex;
     }
 
+    .inline-block {
+        display: inline-block;
+    }
+
+    .flex-column {
+        flex-direction: column;
+    }
+
     .justify-between {
         justify-content: space-between;
+    }
+
+    .justify-center {
+        justify-content: center;
     }
 
     .main-padding {
@@ -155,6 +167,12 @@ export const GlobalStyle = createGlobalStyle`
     .mt-4 {
         margin-top: 2rem;
     }
+    .mt-5 {
+        margin-top: 4rem;
+    }
+    .mt-6 {
+        margin-top: 8rem;
+    }
 
     .mb-1 {
         margin-bottom: 0.25rem;
@@ -229,8 +247,17 @@ export const GlobalStyle = createGlobalStyle`
         margin-left: 2rem;
     }
 
+    .gap-1 {
+        gap: .25rem;
+    }
+    .gap-2 {
+        gap: .5rem;
+    }
     .gap-3 {
         gap: 1rem;
+    }
+    .gap-4 {
+        gap: 2rem;
     }
 
     .landing {

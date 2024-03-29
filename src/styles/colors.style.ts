@@ -18,6 +18,9 @@ const palette = {
     black: {
         regular: "#1e1e1e",
     },
+    purple: {
+        regular: "#9260C4",
+    }
 }
 
 export const colors = {
@@ -26,9 +29,11 @@ export const colors = {
         emphasis: palette.blue.dark,
         inverse: palette.white.regular,
         light: palette.gray.light,
+        secondary: palette.purple.regular,
     },
     background: {
         primary: palette.blue.regular,
+        primaryDark: palette.blue.dark,
         success: palette.green.regular,
         primaryHover: palette.blue.dark,
         successHover: palette.green.dark,

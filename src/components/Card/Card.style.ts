@@ -7,6 +7,8 @@ interface CardProps {
     centered?: boolean;
     objectfit?: string;
     aspectRatio?: string;
+    horizontal?: boolean;
+    linkStyle?: string;
 }
 
 export const CardStyled = styled.article<CardProps>`
@@ -30,22 +32,29 @@ export const CardStyled = styled.article<CardProps>`
         order: 1;
     }
 
-    h4 {
-        font-weight: 800;
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: calc(var(--padding) / 2);
         order: 2;
+    }
+
+    .title {
         padding-left: var(--padding);
         padding-right: var(--padding);
     }
 
-    .content {
-        order: 3;
+    .text-content {
         padding-left: var(--padding);
         padding-right: var(--padding);
+
+        p {
+            font-size: ${variables.textSize.small};
+        }
     }
 
     .link {
         font-weight: 800;
-        order: 4;
         padding-left: var(--padding);
         padding-right: var(--padding);
     }
@@ -66,8 +75,53 @@ export const CardStyled = styled.article<CardProps>`
     ${(props) =>
         props.centered &&
         `
+            padding-top: var(--padding);
             align-items: center;
             justify-content: center;
             text-align: center;
+        `}
+
+    ${(props) =>
+        props.horizontal &&
+        `
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 100%;
+            max-width: 100%;
+            text-align: left;
+            padding: 0;
+            justify-content: space-between;
+            padding-left: calc(var(--padding) * 3);
+            
+            .content {
+                order: 1;
+
+                .title {
+                    padding-left: 0;
+                    padding-right: 0;
+                    font-size: ${variables.textSize.h1};
+                }
+            }
+            .img {
+                order: 2;
+            }
+        `}
+
+    ${(props) =>
+        props.linkStyle === 'button' &&
+        `
+            .link {
+                background-color: ${colors.background.primary};
+                color: ${colors.text.inverse};
+                padding: 0.75rem 2rem;
+                border-radius: ${variables.borderRadius.button};
+                width: max-content;
+                
+                text-decoration: none;
+                transition: background-color 0.1s ease-in-out;
+                &:hover {
+                    background-color: ${colors.background.primaryHover};
+                }
+            }
         `}
 `;

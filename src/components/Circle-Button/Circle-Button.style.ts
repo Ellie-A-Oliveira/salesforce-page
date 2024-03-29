@@ -1,7 +1,9 @@
 import { styled } from "styled-components";
 
-export const CircleButtonStyled = styled.div`
-    --size: 105px;
+export const CircleButtonStyled = styled.div<{
+    color?: string
+}>`
+    --size: 100px;
     max-width: var(--size);
 
     p {
@@ -9,6 +11,7 @@ export const CircleButtonStyled = styled.div`
         overflow-wrap: normal;
     }
     .circle-button {
+        color: ${(props) => props.color ?? "inherit"};
         display: flex;
         align-items: center;
         justify-content: center;

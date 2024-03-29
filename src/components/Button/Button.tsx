@@ -4,7 +4,7 @@ import { ButtonVariants, Sizes } from '../../constants';
 
 interface ButtonProps {
 	children: React.ReactNode;
-	variant: ButtonVariants;
+	variant?: ButtonVariants;
 	size?: Sizes;
 	format?: 'round';
 	className?: string;

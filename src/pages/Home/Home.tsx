@@ -12,10 +12,12 @@ import * as img8 from '../../assets/img/sumup-customers-home.webp';
 import * as img9 from '../../assets/img/gympass-customers-home.webp';
 import * as img10 from '../../assets/img/vipal-customers-home.webp';
 import * as img11 from '../../assets/img/tigre-customers-home.webp';
+import * as img12 from '../../assets/img/hp-newsletter-card.webp';
 import CircleButton from '../../components/Circle-Button/Circle-Button';
 import { faCoins } from '@fortawesome/free-solid-svg-icons';
 import { faShopify } from '@fortawesome/free-brands-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { colors } from '../../styles/colors.style';
 
 export const Home = () => {
 	return (
@@ -145,19 +147,35 @@ export const Home = () => {
 					/>
 				</section>
 			</article>
-			<article className='main-padding text-center my-4 '>
+			<article className='main-padding text-center my-4'>
 				<header>
 					<h2>Encontre inovações para qualquer setor de indústria.</h2>
 					<p>Seja qual for a sua indústria, oferecemos soluções para modernizar o seu negócio, economizar tempo e reduzir custos.</p>
 				</header>
 				<section className='my-4'>
 					<Button variant={ButtonVariants.PRIMARY_INVERTED}>Veja todas as indústrias</Button>
-					<div className='flex gap-4 justify-between my-4'>
-						<CircleButton iconName={faCoins}>Serviços Financeiros</CircleButton>
-						<CircleButton iconName={faShopify}>Varejo</CircleButton>
-						<CircleButton iconName={faHeart}>Saúde e Ciências da Vida</CircleButton>
-						<CircleButton iconName={faShopify}>Manufatura</CircleButton>
+					<div className='flex justify-center'>
+						<div className='flex gap-4 my-4'>
+							<CircleButton color={colors.text.secondary} iconName={faCoins}>Serviços Financeiros</CircleButton>
+							<CircleButton color={colors.text.secondary} iconName={faShopify}>Varejo</CircleButton>
+							<CircleButton color={colors.text.secondary} iconName={faHeart}>Saúde e Ciências da Vida</CircleButton>
+							<CircleButton color={colors.text.secondary} iconName={faShopify}>Manufatura</CircleButton>
+						</div>
 					</div>
+				</section>
+			</article>
+			<article className='main-padding my-4'>
+				<section>
+					<Card
+						imgProps={{ imgsrc: img12.default, aspectRatio: '3/2', objectfit: 'contain' }}
+						title='Venda de forma mais inteligente'
+						link='https://www.google.com'
+						linkTitle='Entre em contato'
+						linkStyle='button'
+						centered={true}
+						borders={true}
+						horizontal={true}
+					/>
 				</section>
 			</article>
 		</>

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { ButtonVariants, Sizes } from '../../constants';
 import { colors } from '../../styles/colors.style';
+import { variables } from '../../styles/variables.style';
 
 export const ButtonElement = styled.button<{
 	variant?: ButtonVariants;
@@ -10,7 +11,7 @@ export const ButtonElement = styled.button<{
 	border-width: 1px;
 	border-style: solid;
 	border-color: unset;
-	border-radius: 5px;
+	border-radius: ${variables.borderRadius.button};
 
 	padding: 0.75rem 2rem;
 
