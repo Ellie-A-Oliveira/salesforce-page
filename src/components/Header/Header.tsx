@@ -17,7 +17,7 @@ export const Header = () => {
 		<HeaderStyled>
 			<nav className='flex align-center justify-between'>
 				<ul className='flex align-center gap-2 show-md'>
-					<li>
+					<li className='mr-3'>
 						<Button variant={ButtonVariants.NO_STYLE}><FontAwesomeIcon icon={faBars} size='lg'/></Button>
 					</li>
 					<li>

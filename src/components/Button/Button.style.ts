@@ -85,6 +85,7 @@ export const ButtonElement = styled.button<{
         background-color: transparent;
         color: ${colors.text.regular};
         border: none;
+        padding: 0;
         `}
 
     /* !SECTION - Variants */
