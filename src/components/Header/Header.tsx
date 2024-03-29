@@ -4,7 +4,7 @@ import { Button } from '..';
 import * as logo from '../../assets/img/salesforce-with-type-logo.svg';
 import { HeaderStyled } from './Header.style';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlobe, faPerson, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faGlobe, faPerson, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 export const Header = () => {
 	const navigate = useNavigate();
@@ -16,7 +16,15 @@ export const Header = () => {
 	return (
 		<HeaderStyled>
 			<nav className='flex align-center justify-between'>
-				<ul className='flex align-center gap-4'>
+				<ul className='flex align-center gap-2 show-md'>
+					<li>
+						<Button variant={ButtonVariants.NO_STYLE}><FontAwesomeIcon icon={faBars} size='lg'/></Button>
+					</li>
+					<li>
+						<a onClick={() => handleNavigate('/')}><img className='logo' src={logo.default} alt="Logo da Salesforce" /></a>
+					</li>
+				</ul>
+				<ul className='flex align-center gap-4 collapse-md'>
 					<li>
 						<a onClick={() => handleNavigate('/')}><img className='logo' src={logo.default} alt="Logo da Salesforce" /></a>
 					</li>

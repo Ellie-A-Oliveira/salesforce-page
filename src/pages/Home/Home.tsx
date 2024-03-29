@@ -22,7 +22,7 @@ import { colors } from '../../styles/colors.style';
 export const Home = () => {
 	return (
 		<>
-			<article className='flex main-padding justify-between landing'>
+			<article className='flex main-padding justify-between gap-2 landing'>
 				<header className='landing-text'>
 					<h1>Experimente o Salesforce Starter Suite gratuitamente.</h1>
 					<p>
@@ -33,9 +33,7 @@ export const Home = () => {
 						<Button variant={ButtonVariants.PRIMARY_INVERTED}>Assista à demo</Button>
 					</div>
 				</header>
-				<section>
-					<img src={img1.default} alt="Foto do Salesforce Starter" />
-				</section>
+				<img src={img1.default} alt="Foto do Salesforce Starter" />
 			</article>
 			<article>
 				<header className="main-padding text-center my-5">

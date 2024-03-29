@@ -65,9 +65,25 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     .main-padding {
-        --padding: 9.5rem;
+        --padding: .5rem;
         padding-left: var(--padding);
         padding-right: var(--padding);
+
+        @media (min-width: 768px) {
+            --padding: 1rem;
+        }
+
+        @media (min-width: 1052px) {
+            --padding: 5rem;
+        }
+
+        @media (min-width: 1268px) {
+            --padding: clamp(2rem, min(15%, 15vw), 40%);
+        }
+        
+        @media (min-width: 1920px) {
+            --padding: clamp(2rem, min(30%, 30vw), 40%);
+        }
     }
 
     .text-center {
@@ -89,6 +105,18 @@ export const GlobalStyle = createGlobalStyle`
 
         img {
             border-radius: ${variables.borderRadius.default};
+        }
+    }
+
+    .collapse-md {
+        @media (max-width: 1268px) {
+            display: none;
+        }
+    }
+
+    .show-md {
+        @media (min-width: 1269px) {
+            display: none;
         }
     }
 `

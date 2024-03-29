@@ -79,6 +79,14 @@ export const ButtonElement = styled.button<{
         }
         `}
 
+    ${(props) =>
+		props.variant === 'nostyle' &&
+		`
+        background-color: transparent;
+        color: ${colors.text.regular};
+        border: none;
+        `}
+
     /* !SECTION - Variants */
 
     /* SECTION - Sizes */
