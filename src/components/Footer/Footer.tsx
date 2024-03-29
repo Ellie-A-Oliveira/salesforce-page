@@ -4,6 +4,7 @@ import { faFacebook, faInstagram, faLinkedin, faTwitter, faYoutube } from '@fort
 import { FooterStyled } from './Footer.style';
 import { faAngleDown, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { Button } from '..';
+import FloatingMenu from '../Floating-Menu/Floating-Menu';
 
 interface FooterProps {
 	className?: string
@@ -80,11 +81,49 @@ export const Footer = ({className}: FooterProps) => {
 		</div>
 		<article className='legal py-3 mt-4'>
 			<section className="main-padding legal-section">
-				<div className='floating-menu'>
-					<Button>
-						<FontAwesomeIcon icon={faGlobe} /> Mudar de região <FontAwesomeIcon icon={faAngleDown} />
-					</Button>
-				</div> 
+				<FloatingMenu
+					title='Mudar de região'
+					menuItems={[
+						{
+							columnTitle: 'Américas',
+							options: [
+								{ type: 'link', title: 'América Latina (Español)', link: 'https://www.google.com' },
+								{ type: 'link', title: 'Brasil (Português)', link: 'https://www.google.com' },
+								{ type: 'link', title: 'Canada (English)', link: 'https://www.google.com' },
+								{ type: 'link', title: 'Canada (Français)', link: 'https://www.google.com' },
+								{ type: 'link', title: 'United States (English)', link: 'https://www.google.com' },
+							],
+						},
+						{
+							columnTitle: 'Europa, Oriente Médio e África',
+							options: [
+								{ type: 'link', title: 'España (Español)', link: 'https://www.google.com' },
+								{ type: 'link', title: 'Deutschland (Deutsch)', link: 'https://www.google.com' },
+								{ type: 'link', title: 'France (Français)', link: 'https://www.google.com' },
+								{ type: 'link', title: 'Italia (Italiano)', link: 'https://www.google.com' },
+								{ type: 'link', title: 'Nederland (Nederlands)', link: 'https://www.google.com' },
+								{ type: 'link', title: 'Sverige (Svenska)', link: 'https://www.google.com' },
+								{ type: 'link', title: 'United Kingdom (English)', link: 'https://www.google.com' },
+								{ type: 'link', title: 'All other countries (English)', link: 'https://www.google.com' },
+							],
+						},
+						{
+							columnTitle: 'Ásia Pacífico',
+							options: [
+								{ type: 'link', title: 'Australia (English)', link: 'https://www.google.com' },
+								{ type: 'link', title: 'India (English)', link: 'https://www.google.com' },
+								{ type: 'link', title: '日本 (日本語)', link: 'https://www.google.com' },
+								{ type: 'link', title: '中国 (简体中文)', link: 'https://www.google.com' },
+								{ type: 'link', title: '台灣 (繁體中文)', link: 'https://www.google.com' },
+								{ type: 'link', title: '한국 (한국어)', link: 'https://www.google.com' },
+								{ type: 'link', title: 'ประเทศไทย (ไทย)', link: 'https://www.google.com' },
+								{ type: 'link', title: 'All other countries (English)', link: 'https://www.google.com' },
+							],
+						},
+					]}
+				>
+					<FontAwesomeIcon icon={faGlobe} /> Mudar de região <FontAwesomeIcon icon={faAngleDown} />
+				</FloatingMenu>
 				<div>
 					<ul className='flex gap-3'>
 						<li><a href='https://www.google.com'>Legal</a></li>

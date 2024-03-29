@@ -70,7 +70,7 @@ export const CardStyled = styled.article<CardProps>`
     ${(props) =>
         props.borders &&
         `
-            box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.1);
+            box-shadow: ${variables.boxShadow.default};
         `}
 
     ${(props) =>

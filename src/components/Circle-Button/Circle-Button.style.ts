@@ -21,7 +21,7 @@ export const CircleButtonStyled = styled.div<{
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.1);
+        box-shadow: ${variables.boxShadow.default};
         border-radius: 50%;
         width: var(--size);
         height: var(--size);

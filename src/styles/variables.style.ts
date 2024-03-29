@@ -11,5 +11,8 @@ export const variables = {
     borderRadius: {
         default: '20px',
         button: '5px',
+    },
+    boxShadow: {
+        default: '0px 2px 5px 2px rgba(0, 0, 0, 0.1)',
     }
 }
