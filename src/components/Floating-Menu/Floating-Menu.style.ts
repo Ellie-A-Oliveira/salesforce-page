@@ -63,11 +63,10 @@ export const FloatingMenuStyled = styled.div<FloatingMenuProps>`
         }
     }
 
-    .open {
-        display: block;
-    }
-    
-    ${props => props.open && `
+    &:focus-within {
+        .floating-menu {
+            display: block;
+        }
         &::after {
             clip-path: polygon(50% 100%, 0 0, 100% 0);
             content: '';
@@ -79,6 +78,5 @@ export const FloatingMenuStyled = styled.div<FloatingMenuProps>`
             width: calc(var(--balloon-point-size) * 1.5);
             background-color: ${colors.background.default};
         }
-    `}
-
+    }
 `

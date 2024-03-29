@@ -19,16 +19,15 @@ interface FloatingMenuProps {
 }
 
 export default function FloatingMenu({ children, title, menuItems }: FloatingMenuProps) {
-    const [open, setOpen] = useState(false);
     const menu = useRef<HTMLDivElement>(null);
+    const [height, setHeight] = useState(0);
 
-    const handleClick = () => {
-        setOpen(!open);
-        menu.current!.classList.toggle('open');
+    const handleFocus = () => {
+        setHeight(menu.current!.getBoundingClientRect().height);
     }
     
     return (
-        <FloatingMenuStyled height={menu.current?.offsetHeight} open={open}>
+        <FloatingMenuStyled onFocus={handleFocus} height={height}>
             <div className='floating-menu' ref={menu}>
                 <p className="title">{title}</p>
                 <div className="menu">
@@ -56,7 +55,7 @@ export default function FloatingMenu({ children, title, menuItems }: FloatingMen
                     ))}
                 </div>
             </div>
-            <Button onClick={handleClick}>
+            <Button>
                 {children}
             </Button>
         </FloatingMenuStyled>
