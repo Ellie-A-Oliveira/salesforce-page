@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { ButtonVariants, Sizes } from '../../constants';
 import { colors } from '../../styles/colors.style';
+import { variables } from '../../styles/variables.style';
 
 export const ButtonElement = styled.button<{
 	variant?: ButtonVariants;
@@ -10,7 +11,7 @@ export const ButtonElement = styled.button<{
 	border-width: 1px;
 	border-style: solid;
 	border-color: unset;
-	border-radius: 5px;
+	border-radius: ${variables.borderRadius.button};
 
 	padding: 0.75rem 2rem;
 
@@ -21,6 +22,7 @@ export const ButtonElement = styled.button<{
 
 	transition:
 		background-color 0.1s ease-in-out,
+		border-color 0.1s ease-in-out,
 		color 0.1s ease-in-out;
 
 	/* SECTION - Variants */
@@ -34,6 +36,7 @@ export const ButtonElement = styled.button<{
         
         &:hover {
             background-color: ${colors.background.primaryHover};
+            border-color: ${colors.background.primaryHover};
         }
         `}
 
@@ -59,6 +62,7 @@ export const ButtonElement = styled.button<{
 
         &:hover {
             background-color: ${colors.background.successHover};
+            border-color: ${colors.background.successHover};
         }
         `}
 
@@ -73,6 +77,15 @@ export const ButtonElement = styled.button<{
             background-color: ${colors.background.success};};
             color: ${colors.text.inverse};
         }
+        `}
+
+    ${(props) =>
+		props.variant === 'nostyle' &&
+		`
+        background-color: transparent;
+        color: ${colors.text.regular};
+        border: none;
+        padding: 0;
         `}
 
     /* !SECTION - Variants */

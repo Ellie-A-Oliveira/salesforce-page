@@ -10,7 +10,7 @@ export const Layout = ({ children }: LayoutProps) => {
 		<>
 			<Header></Header>
 			<main>{children}</main>
-			<Footer></Footer>
+			<Footer className='mt-6'></Footer>
 		</>
 	);
 };

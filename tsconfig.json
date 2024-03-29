@@ -20,6 +20,6 @@
 		"noUnusedParameters": true,
 		"noFallthroughCasesInSwitch": true
 	},
-	"include": ["src"],
+	"include": ["src", "public/fonts"],
 	"references": [{ "path": "./tsconfig.node.json" }]
 }

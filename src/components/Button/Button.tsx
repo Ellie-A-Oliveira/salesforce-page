@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import { ButtonElement } from './Button.style';
 import { ButtonVariants, Sizes } from '../../constants';
 
 interface ButtonProps {
 	children: React.ReactNode;
-	variant: ButtonVariants;
+	variant?: ButtonVariants;
 	size?: Sizes;
 	format?: 'round';
+	className?: string;
+	onClick?: MouseEventHandler;
 }
 
-export const Button = ({ children, variant, size, format }: ButtonProps) => {
+export const Button = ({ children, variant, size, format, className, onClick }: ButtonProps) => {
 	return (
-		<ButtonElement variant={variant} size={size} format={format}>
+		<ButtonElement onClick={onClick} className={className} variant={variant} size={size} format={format}>
 			{children}
 		</ButtonElement>
 	);
