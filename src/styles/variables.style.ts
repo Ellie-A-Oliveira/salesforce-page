@@ -1,6 +1,6 @@
 export const variables = {
     textSize: {
-        smallest: '0.75rem',
+        smallest: '0.9rem',
         small: '1rem',
         regular: '1.25rem',
         socialLinks: '1.5rem',

@@ -18,6 +18,7 @@ export const FooterStyled = styled.footer`
 
     .links-list {
         a {
+            font-size: ${variables.textSize.smallest};
             text-decoration: none;
         }
     }
@@ -34,8 +35,11 @@ export const FooterStyled = styled.footer`
         background-color: ${colors.background.primaryDark};
         color: ${colors.text.inverse};
 
-        a:visited {
-            color: ${colors.text.inverse};
+        a {
+            font-size: ${variables.textSize.smallest};
+            &:visited {
+                color: ${colors.text.inverse};
+            }
         }
 
         .legal-section {
