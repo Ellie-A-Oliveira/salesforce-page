@@ -14,7 +14,7 @@ import * as img10 from '../../assets/img/vipal-customers-home.webp';
 import * as img11 from '../../assets/img/tigre-customers-home.webp';
 import * as img12 from '../../assets/img/hp-newsletter-card.webp';
 import CircleButton from '../../components/Circle-Button/Circle-Button';
-import { faCoins } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle, faCoins } from '@fortawesome/free-solid-svg-icons';
 import { faShopify } from '@fortawesome/free-brands-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { colors } from '../../styles/colors.style';
@@ -159,7 +159,7 @@ export const Home = () => {
 							<CircleButton color={colors.text.secondary} iconName={faCoins}>Serviços Financeiros</CircleButton>
 							<CircleButton color={colors.text.secondary} iconName={faShopify}>Varejo</CircleButton>
 							<CircleButton color={colors.text.secondary} iconName={faHeart}>Saúde e Ciências da Vida</CircleButton>
-							<CircleButton color={colors.text.secondary} iconName={faShopify}>Manufatura</CircleButton>
+							<CircleButton color={colors.text.secondary} iconName={faCheckCircle}>Manufatura</CircleButton>
 						</div>
 					</div>
 				</section>
