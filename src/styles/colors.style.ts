@@ -41,5 +41,6 @@ export const colors = {
         success: palette.green.regular,
         primaryHover: palette.blue.dark,
         successHover: palette.green.dark,
+        forms: palette.blue.light
     },
 };
