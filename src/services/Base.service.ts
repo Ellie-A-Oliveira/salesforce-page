@@ -1,10 +1,14 @@
+import { Provider } from "../scripts/provider";
 import { HttpService } from "./Http.service";
 
 export class BaseService<T> {
+    httpService: HttpService<T>;
+
     public constructor(
-        private readonly httpService: HttpService<T>,
         private readonly BASE_URI: string
-    ) {}
+    ) {
+        this.httpService = Provider.provide(HttpService);
+    }
 
     public async getAll() {
         return await this.httpService.get(this.BASE_URI);

@@ -3,11 +3,15 @@ export class HttpService<T> {
 
     private async request(uri: string, method: string, body?: object): Promise<T> {
         const fullUrl = HttpService.BASE_URL + uri;
+        const headers = new Headers();
+        headers.append('Access-Control-Allow-Origin', HttpService.BASE_URL);
+        headers.append('Content-Type', 'application/json');
+
         const response = await fetch(
             fullUrl,
             {
                 method,
-                headers: { 'Content-Type': 'application/json' },
+                headers,
                 body: JSON.stringify(body)
             }
         );

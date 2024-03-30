@@ -18,8 +18,38 @@ import { faCheckCircle, faCoins } from '@fortawesome/free-solid-svg-icons';
 import { faShopify } from '@fortawesome/free-brands-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { colors } from '../../styles/colors.style';
+import { useEffect, useRef, useState } from 'react';
+import { Cliente } from '../../interfaces/Cliente.interface';
+import { Provider } from '../../scripts/provider';
+import { ClienteService } from '../../services/Cliente.service';
+import { FuncionarioService } from '../../services/Funcionario.service';
+import { Funcionario } from '../../interfaces/Funcionario.interface';
 
 export const Home = () => {
+	const [clientes, setClientes] = useState<Cliente[]>([]);
+	const [funcionarios, setFuncionarios] = useState<Funcionario[]>([]);
+
+	const clienteService = useRef(Provider.provide(ClienteService));
+	const funcionarioService = useRef(Provider.provide(FuncionarioService));
+
+	useEffect(() => {
+		const getClientes = async () => {
+			setClientes(await clienteService.current.getAll());
+			console.log(clientes);
+		};
+
+		getClientes();
+	}, []);
+	
+	useEffect(() => {
+		const getFuncionarios = async () => {
+			setFuncionarios(await funcionarioService.current.getAll());
+			console.log(funcionarios);
+		};
+
+		getFuncionarios();
+	}, []);
+
 	return (
 		<>
 			<article className='flex main-padding justify-between gap-2 landing'>
