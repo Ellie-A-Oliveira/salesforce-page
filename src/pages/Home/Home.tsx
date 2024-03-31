@@ -24,13 +24,20 @@ import { Provider } from '../../scripts/provider';
 import { ClienteService } from '../../services/Cliente.service';
 import { FuncionarioService } from '../../services/Funcionario.service';
 import { Funcionario } from '../../interfaces/Funcionario.interface';
+import { useNavigate } from 'react-router-dom';
 
 export const Home = () => {
+	const navigate = useNavigate();
+
 	const [clientes, setClientes] = useState<Cliente[]>([]);
 	const [funcionarios, setFuncionarios] = useState<Funcionario[]>([]);
 
 	const clienteService = useRef(Provider.provide(ClienteService));
 	const funcionarioService = useRef(Provider.provide(FuncionarioService));
+
+	const handleNavigate = (path: string) => {
+		navigate(path);
+	};
 
 	useEffect(() => {
 		const getClientes = async () => {
@@ -59,7 +66,7 @@ export const Home = () => {
 					Reúna marketing, vendas e atendimento em um único aplicativo. Experimente o Salesforce Starter Suite hoje mesmo. Não há nada para instalar. Não é necessário cartão de crédito.
 					</p>
 					<div className="flex">
-						<Button className="mr-2" variant={ButtonVariants.PRIMARY}>Inicie o teste gratuito</Button>
+						<Button className="mr-2" variant={ButtonVariants.PRIMARY} onClick={() => handleNavigate('/formulario')}>Inicie o teste gratuito</Button>
 						<Button variant={ButtonVariants.PRIMARY_INVERTED}>Assista à demo</Button>
 					</div>
 				</header>
@@ -197,7 +204,7 @@ export const Home = () => {
 					<Card
 						imgProps={{ imgsrc: img12.default, aspectRatio: '3/2', objectfit: 'contain' }}
 						title='Venda de forma mais inteligente'
-						link='https://www.google.com'
+						link='/formulario'
 						linkTitle='Entre em contato'
 						linkStyle='button'
 						centered={true}

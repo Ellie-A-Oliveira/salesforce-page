@@ -2,12 +2,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from './components';
 import { Home } from './pages';
 import { Formulario } from './pages/Formulario/Formulario';
+import { ScrollToTop } from './components/ScrollToTop/ScrollToTop';
 
 function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route
+				<Route 
 					path="/"
 					element={
 						<Layout>
@@ -15,20 +16,15 @@ function App() {
 						</Layout>
 					}
 				></Route>
-				<Route
-					path="/contato"
-					element={
-						<Layout>
-							<></>
-						</Layout>
-					}
-				></Route>
+
 				<Route
 					path="/formulario"
 					element={
-						<Layout>
-							<Formulario></Formulario>
-						</Layout>
+						<ScrollToTop>
+							<Layout>
+								<Formulario></Formulario>
+							</Layout>
+						</ScrollToTop>
 					}
 				></Route>
 			</Routes>

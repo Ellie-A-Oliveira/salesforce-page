@@ -56,7 +56,7 @@ export const Header = () => {
 							<FontAwesomeIcon icon={faPerson} size='lg' /> Login
 						</a>
 					</div>
-					<Button variant={ButtonVariants.SUCCESS}>
+					<Button variant={ButtonVariants.SUCCESS} onClick={() => handleNavigate('/formulario')}>
 						Teste grátis
 					</Button>
 				</div>
