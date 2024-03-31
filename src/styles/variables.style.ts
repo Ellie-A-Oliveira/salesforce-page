@@ -7,6 +7,7 @@ export const variables = {
         h3: '1.4rem',
         h2: '2rem',
         h1: '2.5rem',
+        formsTitle: '1.4rem'
     },
     borderRadius: {
         default: '20px',

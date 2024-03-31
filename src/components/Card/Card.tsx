@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { CardStyled } from "./Card.style";
 
 interface CardProps {
@@ -26,6 +27,11 @@ export default function Card(
         horizontal,
         linkStyle,
     }: CardProps) {
+        const navigate = useNavigate();
+
+        const handleNavigate = (path: string) => {
+            navigate(path);
+        };
     return (
         <CardStyled
             borders={borders}
@@ -35,14 +41,16 @@ export default function Card(
             horizontal={horizontal}
             linkStyle={linkStyle}
         >
-            <a className="img" href={link}><img src={imgProps.imgsrc} alt={title} /></a>
+            <a className="img" onClick={() => handleNavigate(link!)}
+            ><img src={imgProps.imgsrc} alt={title} /></a>
             <div className="content">
                 <h3 className="title">{title}</h3>
                 <div className="text-content">
                     {description ? <p>{description}</p> : null}
                     {subtext ? <p className="subtext">{subtext}</p> : null}
                 </div>
-                {link ? <a className="link" href={link}>{linkTitle}</a> : null}
+                {link ? <a className="link" onClick={() => handleNavigate(link!)}
+                >{linkTitle}</a> : null}
             </div>
         </CardStyled>
     );
