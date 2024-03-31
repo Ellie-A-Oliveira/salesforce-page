@@ -9,11 +9,12 @@ interface ButtonProps {
 	format?: 'round';
 	className?: string;
 	onClick?: MouseEventHandler;
+	type?: 'button' | 'submit' | 'reset';
 }
 
-export const Button = ({ children, variant, size, format, className, onClick }: ButtonProps) => {
+export const Button = ({ children, variant, size, format, className, onClick, type='button' }: ButtonProps) => {
 	return (
-		<ButtonElement onClick={onClick} className={className} variant={variant} size={size} format={format}>
+		<ButtonElement onClick={onClick} className={className} variant={variant} size={size} format={format} type={type}>
 			{children}
 		</ButtonElement>
 	);

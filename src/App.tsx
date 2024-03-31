@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from './components';
 import { Home } from './pages';
 import { Formulario } from './pages/Formulario/Formulario';
-import { LayoutForms } from './components/LayoutForms/LayoutForms';
 
 function App() {
 	return (
@@ -27,9 +26,9 @@ function App() {
 				<Route
 					path="/formulario"
 					element={
-						<LayoutForms>
+						<Layout>
 							<Formulario></Formulario>
-						</LayoutForms>
+						</Layout>
 					}
 				></Route>
 			</Routes>
