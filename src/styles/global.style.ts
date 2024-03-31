@@ -100,7 +100,7 @@ export const GlobalStyle = createGlobalStyle`
         }
         
         @media (min-width: 1920px) {
-            --padding: clamp(2rem, min(30%, 30vw), 40%);
+            --padding: clamp(2rem, min(20%, 20vw), 40%);
         }
     }
 
