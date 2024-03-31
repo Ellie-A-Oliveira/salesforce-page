@@ -39,6 +39,9 @@ export const GlobalStyle = createGlobalStyle`
     a {
         cursor: pointer;
     }
+    .block{
+        display: block;
+    }
 
     .flex {
         display: flex;
@@ -62,6 +65,21 @@ export const GlobalStyle = createGlobalStyle`
 
     .align-center {
         align-items: center;
+    }
+    .flex-wrap{
+        flex-wrap: wrap;
+    }
+    .inline{
+        display: inline;
+    }
+    .text-left{
+        text-align: left;
+    }
+    .w-100{
+        width: 100%;
+    }
+    .h-100{
+        height: 100%;
     }
 
     .main-padding {

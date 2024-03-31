@@ -10,7 +10,7 @@ const palette = {
     },
     gray: {
         lighter: "#dddddd",
-        light: "#818181",
+        light: "#5D5D5D",
         regular: "#323232",
     },
     white: {
@@ -43,4 +43,7 @@ export const colors = {
         successHover: palette.green.dark,
         forms: palette.blue.light
     },
+    border: {
+        primaryDark : palette.blue.dark
+    }
 };
