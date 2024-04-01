@@ -43,6 +43,9 @@ export const Header = () => {
 					<li>
 						<a role='button'>Empresa</a>
 					</li>
+					<li>
+						<a onClick={() => handleNavigate('/integrantes')} role='button'>Integrantes Challenge</a>
+					</li>
 				</ul>
 				<div className='flex gap-4 align-center'>
 					<div className='flex flex-column align-center'>
