@@ -28,6 +28,7 @@ export default function Integrantes() {
                     borders={true}
                 />
             </div>
+            <a className="block mt-3" href="https://github.com/Ellie-A-Oliveira/salesforce-page" target="_blank">Repositório Github</a>
         </IntegrantesStyled>
     );
 }
