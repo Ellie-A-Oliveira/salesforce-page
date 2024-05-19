@@ -3,7 +3,7 @@ import { FormularioStyle } from "./Formulario.style";
 import { Button } from "../../components";
 import { ButtonVariants } from "../../constants";
 import { FormInput } from '../../components/FormInput/FormInput';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 
 export const Formulario = () => {

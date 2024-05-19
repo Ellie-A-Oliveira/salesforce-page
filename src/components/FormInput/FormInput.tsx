@@ -5,7 +5,7 @@ interface FormInputProps {
   inputType: string
   className?: string
   name: string
-  onChange?: any
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
   required?: boolean
 }
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Header, Footer } from '..';
-import { exportClicksData } from '../../scripts/click-tracker';
 
 interface LayoutProps {
 	children: React.ReactNode;
