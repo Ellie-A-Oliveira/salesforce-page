@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as imgTablet from '../../assets/img/img-forms.png';
 import { FormularioStyle } from "./Formulario.style";
 import { Button } from "../../components";
@@ -10,13 +11,13 @@ export const Formulario = () => {
 
     const [ inputs, setInputs] = useState({});
 
-    const handleChange = (event) => {
+    const handleChange = (event: any) => {
         const name = event.target.name;
         const value = event.target.value;
         setInputs(values => ({...values, [name]: value}))
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = (event: any) => {
         event.preventDefault();
         console.log(inputs);
     }
