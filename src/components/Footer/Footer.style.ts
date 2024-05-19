@@ -48,4 +48,8 @@ export const FooterStyled = styled.footer`
             gap: 2rem;
         }
     }
+
+    .links a {
+        color: white;
+    }
 `
