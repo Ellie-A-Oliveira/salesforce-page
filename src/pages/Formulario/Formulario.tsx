@@ -4,7 +4,7 @@ import { FormularioStyle } from "./Formulario.style";
 import { Button } from "../../components";
 import { ButtonVariants } from "../../constants";
 import { FormInput } from '../../components/FormInput/FormInput';
-import { useEffect, useRef, useState } from 'react';
+import { FormEvent, useEffect, useRef, useState } from 'react';
 import { ClienteService } from '../../services/Cliente.service';
 import { Provider } from '../../scripts/provider';
 import { Cliente } from '../../interfaces/Cliente.interface';
@@ -13,18 +13,18 @@ import { Empresa } from '../../interfaces/Empresa.interface';
 import { useNavigate } from 'react-router-dom';
 
 interface FormInputs {
-    nome: string;
-    sobrenome: string;
-    email: string;
-    tipo: string;
-    idioma: string;
-    pais: string;
-    telefone: string;
+    nome?: string;
+    sobrenome?: string;
+    email?: string;
+    tipo?: string;
+    idioma?: string;
+    pais?: string;
+    telefone?: string;
 }
 
-export const Formulario = async () => {
+export const Formulario = () => {
 
-    const [inputs, setInputs] = useState<FormInputs>({} as FormInputs);
+    const [inputs, setInputs] = useState<FormInputs>({});
     const [clientes, setClientes] = useState<Cliente[]>([]);
     const [empresas, setEmpresas] = useState<Empresa[]>([]);
 
@@ -34,19 +34,10 @@ export const Formulario = async () => {
         setInputs(values => ({...values, [name]: value}))
     }
 
-    const handleSubmit = (event: any) => {
-        event.preventDefault();
-        console.log(inputs);
-    }
-
     const clienteService = useRef(Provider.provide(ClienteService));
     const empresaService = useRef(Provider.provide(EmpresaService));
 
     const navigate = useNavigate();
-
-    const handleNavigate = (path: string) => {
-		navigate(path);
-	};
 
     useEffect(() => {
 		const getClientes = async () => {
@@ -66,42 +57,37 @@ export const Formulario = async () => {
 		getEmpresa();
 	}, []);
 
-    const clienteData: Partial<Cliente> = {
-        nome: inputs.nome,
-        sobrenome: inputs.sobrenome,
-        email: inputs.email,
-        tipo:'Indústria',
-        idioma: 'Português',
-        pais: inputs.pais,
-        telefone: inputs.telefone
-    }
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        const clienteData: Partial<Cliente> = {
+            nome: inputs.nome,
+            sobrenome: inputs.sobrenome,
+            email: inputs.email,
+            tipo:'Indústria',
+            idioma: 'Português',
+            pais: inputs.pais,
+            telefone: inputs.telefone
+        }
+    
+        const empresaData: Partial<Empresa> = {
+            nome: inputs.nome,
+            tipoIndustria: 'Comércio',
+            tamanho: 'Pequeno',
+            paisSede: inputs.pais,
+        };
+        
+        try {
+            const clienteResponse = await clienteService.current.create(clienteData);
+            empresaData.clienteId = clienteResponse.id;
 
-    const empresaData: Partial<Empresa> = {
-        nome: inputs.nome,
-        tipoIndustria: 'Comércio',
-        tamanho: 'Pequeno',
-        paisSede: inputs.pais,
+            await empresaService.current.create(empresaData);
+            
+            navigate('/success');
+    
+        } catch (error) {
+            console.error('Erro:', error);
+        }
     };
-
-    try {
-        const clienteResponse = clienteService.current.create(clienteData) 
-        if (!clienteResponse.response.ok) {
-            alert('Erro ao adicionar cliente.');
-        }
-
-        const empresaResponse = empresaService.current.create(empresaData);
-        if (!empresaResponse.response.ok) {
-            alert('Erro ao adicionar cliente.');
-        }
-        
-        
-        navigate('/success');
-
-    } catch (error) {
-        console.error('Erro:', error);
-        alert('Erro ao conectar com o servidor.');
-    }
-	
 
     return (
         <FormularioStyle>
@@ -150,7 +136,7 @@ export const Formulario = async () => {
                             Ao inscrever-se, você confirma que concorda com o processamento de seus dados pessoais pela Salesforce, conforme descrito na Declaração de privacidade.
                         </p>
 
-                        <Button variant={ButtonVariants.PRIMARY} className='w-100' type='submit' onClick={() => handleNavigate('/success')}>INICIAR TESTE GRATUITO</Button>
+                        <Button variant={ButtonVariants.PRIMARY} className='w-100' type='submit'>INICIAR TESTE GRATUITO</Button>
                     </form>
                 </div>
             </div>

@@ -4,4 +4,5 @@ export interface Empresa {
     tipoIndustria: string;
     tamanho: string;
     paisSede: string;
+    clienteId: number;
 }
