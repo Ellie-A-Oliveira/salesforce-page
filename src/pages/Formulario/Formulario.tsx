@@ -80,7 +80,7 @@ export const Formulario = () => {
         nome: inputs.nome,
         tipoIndustria: 'Comércio',
         tamanho: 'Pequeno',
-        paisSede: 'Brasil',
+        paisSede: inputs.pais,
     };
 	
 
