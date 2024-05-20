@@ -3,6 +3,7 @@ import { Layout } from './components';
 import { Home } from './pages';
 import { Formulario } from './pages/Formulario/Formulario';
 import { ScrollToTop } from './components/ScrollToTop/ScrollToTop';
+import { Success } from './pages/Success/Success';
 
 function App() {
 	return (
@@ -27,6 +28,18 @@ function App() {
 						</ScrollToTop>
 					}
 				></Route>
+
+				<Route
+					path="/success"
+					element={
+						<ScrollToTop>
+							<Layout>
+								<Success></Success>
+							</Layout>
+						</ScrollToTop>
+					}
+				></Route>
+
 			</Routes>
 		</BrowserRouter>
 	);

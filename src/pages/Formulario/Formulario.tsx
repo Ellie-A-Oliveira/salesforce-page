@@ -3,12 +3,20 @@ import { FormularioStyle } from "./Formulario.style";
 import { Button } from "../../components";
 import { ButtonVariants } from "../../constants";
 import { FormInput } from '../../components/FormInput/FormInput';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { ClienteService } from '../../services/Cliente.service';
+import { Provider } from '../../scripts/provider';
+import { Cliente } from '../../interfaces/Cliente.interface';
+import { EmpresaService } from '../../services/Empresa.service';
+import { Empresa } from '../../interfaces/Empresa.interface';
+import { useNavigate } from 'react-router-dom';
 
 
 export const Formulario = () => {
 
     const [ inputs, setInputs] = useState({});
+    const [clientes, setClientes] = useState<Cliente[]>([]);
+    const [empresas, setEmpresas] = useState<Empresa[]>([]);
 
     const handleChange = (event) => {
         const name = event.target.name;
@@ -20,6 +28,51 @@ export const Formulario = () => {
         event.preventDefault();
         console.log(inputs);
     }
+
+    const clienteService = useRef(Provider.provide(ClienteService));
+    const empresaService = useRef(Provider.provide(EmpresaService));
+
+    const navigate = useNavigate();
+
+    const handleNavigate = (path: string) => {
+		navigate(path);
+	};
+
+    useEffect(() => {
+		const getClientes = async () => {
+			setClientes(await clienteService.current.getAll());
+			console.log(clientes);
+		};
+
+		getClientes();
+	}, []);    
+    
+    useEffect(() => {
+		const getEmpresa = async () => {
+			setEmpresas(await empresaService.current.getAll());
+			console.log(empresas);
+		};
+
+		getEmpresa();
+	}, []);
+
+    const clienteData = {
+        nome: inputs.nome,
+        sobrenome: inputs.sobrenome,
+        email: inputs.email,
+        tipo:'Indústria',
+        idioma: 'Português',
+        pais: inputs.pais,
+        telefone: inputs.telefone
+    }
+
+      const empresaData = {
+        empr_nome: inputs.nome,
+        tipoIndustria: 'Comércio',
+        tamanho: 'Pequeno',
+        paisSede: 'Brasil',
+      };
+	
 
 
     return (
@@ -50,7 +103,7 @@ export const Formulario = () => {
 
                     <form className="form" onSubmit={handleSubmit}>
                         <div className='flex justify-between gap-2 mb-2'>
-                            <FormInput inputType="text" name='name' onChange={handleChange} required={true}>Nome</FormInput>
+                            <FormInput inputType="text" name='nome' onChange={handleChange} required={true}>Nome</FormInput>
                             <FormInput inputType="text" name='sobrenome' onChange={handleChange} required={true}>Sobrenome</FormInput>
                         </div>
                         <FormInput inputType="text" className='mb-2' name='cargo' onChange={handleChange} required={true}>Cargo</FormInput>
@@ -69,7 +122,7 @@ export const Formulario = () => {
                             Ao inscrever-se, você confirma que concorda com o processamento de seus dados pessoais pela Salesforce, conforme descrito na Declaração de privacidade.
                         </p>
 
-                        <Button variant={ButtonVariants.PRIMARY} className='w-100' type='submit'>INICIAR TESTE GRATUITO</Button>
+                        <Button variant={ButtonVariants.PRIMARY} className='w-100' type='submit' onClick={() => handleNavigate('/success')}>INICIAR TESTE GRATUITO</Button>
                     </form>
                 </div>
             </div>
