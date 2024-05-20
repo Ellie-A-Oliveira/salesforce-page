@@ -80,7 +80,11 @@ export const Formulario = () => {
             const clienteResponse = await clienteService.current.create(clienteData);
             empresaData.clienteId = clienteResponse.id;
 
-            await empresaService.current.create(empresaData);
+            try {
+                await empresaService.current.create(empresaData);
+            } catch (error) {
+                console.error('Erro:', error);
+            }
             
             navigate('/success');
     
