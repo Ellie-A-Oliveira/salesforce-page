@@ -3,6 +3,7 @@ import { colors } from "../../styles/colors.style";
 
 export const HeaderStyled = styled.header`
     position: sticky;
+    z-index: 1;
     top: 0;
     background-color: ${colors.background.default};
     padding: .75rem 2rem;

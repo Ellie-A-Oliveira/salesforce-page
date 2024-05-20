@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as imgTablet from '../../assets/img/img-forms.png';
 import { FormularioStyle } from "./Formulario.style";
 import { Button } from "../../components";
@@ -11,20 +12,29 @@ import { EmpresaService } from '../../services/Empresa.service';
 import { Empresa } from '../../interfaces/Empresa.interface';
 import { useNavigate } from 'react-router-dom';
 
+interface FormInputs {
+    nome: string;
+    sobrenome: string;
+    email: string;
+    tipo: string;
+    idioma: string;
+    pais: string;
+    telefone: string;
+}
 
 export const Formulario = () => {
 
-    const [ inputs, setInputs] = useState({});
+    const [inputs, setInputs] = useState<FormInputs>({} as FormInputs);
     const [clientes, setClientes] = useState<Cliente[]>([]);
     const [empresas, setEmpresas] = useState<Empresa[]>([]);
 
-    const handleChange = (event) => {
+    const handleChange = (event: any) => {
         const name = event.target.name;
         const value = event.target.value;
         setInputs(values => ({...values, [name]: value}))
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = (event: any) => {
         event.preventDefault();
         console.log(inputs);
     }
@@ -56,7 +66,7 @@ export const Formulario = () => {
 		getEmpresa();
 	}, []);
 
-    const clienteData = {
+    const clienteData: Partial<Cliente> = {
         nome: inputs.nome,
         sobrenome: inputs.sobrenome,
         email: inputs.email,
@@ -66,12 +76,12 @@ export const Formulario = () => {
         telefone: inputs.telefone
     }
 
-      const empresaData = {
-        empr_nome: inputs.nome,
+    const empresaData: Partial<Empresa> = {
+        nome: inputs.nome,
         tipoIndustria: 'Comércio',
         tamanho: 'Pequeno',
         paisSede: 'Brasil',
-      };
+    };
 	
 
 

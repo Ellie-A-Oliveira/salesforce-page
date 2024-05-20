@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 interface ServiceToProvide {
 	provide: any;
 	instance: any;

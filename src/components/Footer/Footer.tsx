@@ -123,7 +123,7 @@ export const Footer = ({className}: FooterProps) => {
 				>
 					<FontAwesomeIcon icon={faGlobe} /> Mudar de região <FontAwesomeIcon icon={faAngleDown} />
 				</FloatingMenu>
-				<div>
+				<div className='links'>
 					<ul className='flex gap-3'>
 						<li><a href='https://www.google.com'>Legal</a></li>
 						<li><a href='https://www.google.com'>Termos de serviços</a></li>

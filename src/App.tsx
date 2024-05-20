@@ -4,6 +4,7 @@ import { Home } from './pages';
 import { Formulario } from './pages/Formulario/Formulario';
 import { ScrollToTop } from './components/ScrollToTop/ScrollToTop';
 import { Success } from './pages/Success/Success';
+import Integrantes from './pages/Integrantes/Integrantes';
 
 function App() {
 	return (
@@ -14,6 +15,14 @@ function App() {
 					element={
 						<Layout>
 							<Home></Home>
+						</Layout>
+					}
+				></Route>
+				<Route 
+					path="/integrantes"
+					element={
+						<Layout>
+							<Integrantes></Integrantes>
 						</Layout>
 					}
 				></Route>
