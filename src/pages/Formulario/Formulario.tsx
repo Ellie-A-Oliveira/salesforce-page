@@ -22,7 +22,7 @@ interface FormInputs {
     telefone: string;
 }
 
-export const Formulario = () => {
+export const Formulario = async () => {
 
     const [inputs, setInputs] = useState<FormInputs>({} as FormInputs);
     const [clientes, setClientes] = useState<Cliente[]>([]);
@@ -82,8 +82,26 @@ export const Formulario = () => {
         tamanho: 'Pequeno',
         paisSede: inputs.pais,
     };
-	
 
+    try {
+        const clienteResponse = clienteService.current.create(clienteData) 
+        if (!clienteResponse.response.ok) {
+            alert('Erro ao adicionar cliente.');
+        }
+
+        const empresaResponse = empresaService.current.create(empresaData);
+        if (!empresaResponse.response.ok) {
+            alert('Erro ao adicionar cliente.');
+        }
+        
+        
+        navigate('/success');
+
+    } catch (error) {
+        console.error('Erro:', error);
+        alert('Erro ao conectar com o servidor.');
+    }
+	
 
     return (
         <FormularioStyle>
